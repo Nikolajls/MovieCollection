@@ -86,7 +86,7 @@
       <Name>FoxTales.Infrastructure.CommandFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\foxtales.infrastructure\FoxTales.Infrastructure.DependencyInjection\FoxTales.Infrastructure.DependencyInjection.csproj">
-      <Project>{3DE4A214-2391-4190-81AD-5202BB24FDB1}</Project>
+      <Project>{3de4a214-2391-4190-81ad-5202bb24fdb1}</Project>
       <Name>FoxTales.Infrastructure.DependencyInjection</Name>
     </ProjectReference>
     <ProjectReference Include="..\foxtales.infrastructure\FoxTales.Infrastructure.DTOFramework\FoxTales.Infrastructure.DTOFramework.csproj">

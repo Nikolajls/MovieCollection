@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Autofac;
 using FoxTales.Infrastructure.DependencyInjection;
 using FoxTales.Infrastructure.Repository.EntityFramework6.Extensions;
@@ -16,9 +12,9 @@ namespace Valhal.MovieCollection.Presentation.Service
 {
     public class ServerProgram
     {
-        public string ServiceDescription { get; set; } = "ServiceDescription";
-        public string ServiceDisplayName { get; set; } = "ServiceDisplayName";
-        public string ServiceName { get; set; } = "ServiceName";
+        public string ServiceDescription { get; set; } = "MovieCollection service for scheduling jobs and ServiceBus consuming";
+        public string ServiceDisplayName { get; set; } = "MovieCollection";
+        public string ServiceName { get; set; } = "MovieCollection";
 
         public void Run()
         {
