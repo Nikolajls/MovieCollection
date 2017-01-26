@@ -76,6 +76,8 @@ namespace FoxTales.Infrastructure.CommandFramework
                 catch (Exception ex)
                 {
                    // Log.Logger.Here().Error(ex, "Unhandled exception in command");
+                  Console.WriteLine("Unhandled exception in command");
+                  Console.WriteLine(ex);
                     throw;
                 }
                 finally

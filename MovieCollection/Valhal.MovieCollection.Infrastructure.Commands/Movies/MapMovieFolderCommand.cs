@@ -22,7 +22,11 @@ namespace Valhal.MovieCollection.Infrastructure.Commands.Movies
         protected override string OnExecuting(ILifetimeScope lifetimeScope)
         {
             var context = lifetimeScope.Resolve<DbContext>();
+            int i = 1;
             var nfoContent = new FindNfoContentForMovieFolder(_input).Execute(IsolationLevel.ReadUncommitted).GetAll(c => c).FirstOrDefault();
+
+            int ix = 2;
+
             var movieNfoDto = new NfoToMovieNfoCommand(nfoContent).Execute(IsolationLevel.ReadUncommitted);
             var possibleMovieId = new FindMovieByImdbIdDetailsQuery(movieNfoDto.ImdbId).Execute(IsolationLevel.ReadUncommitted).GetAll(c => c).FirstOrDefault();
             int movieId;

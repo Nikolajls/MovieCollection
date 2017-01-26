@@ -27,24 +27,48 @@ namespace Valhal.MovieCollection.Prototype
         {
             container = SetupAutofac();
 
-            Console.WriteLine("Press enter to start");
-            Console.ReadLine();
 
-            // SetupSearchFolders();
+            var run = true;
+            while (run)
+            {
+                Console.Write(">");
+                var line = Console.ReadLine();
+                switch (line.ToLower())
+                {
+                    case "createsf":
+                        SetupSearchFolders();
+                        break;
+                    case "searchfolders":
+                        SearchFolders();
+                        break;
+                    case "mapmovies":
+                        SendMessages();
+                        break;
+                    case "exit":
+                        run = false;
+                        break;
+
+                }
+            }
+
                SearchFolders();
-            //	MatchMovies();
-      
 
 
-            System.Console.ReadKey();
+
+            Console.WriteLine("Press enter to exit");
+            Console.ReadLine();
             var bus = container.Resolve<IValhalBus>();
             bus?.Dispose();
         }
 
         private static void SetupSearchFolders()
         {
+            Console.WriteLine("Setting up search folders");
+            Action<SearchFolderDto> abc = sf => Console.WriteLine($"Title:{sf.Title}\tPath:{sf.Path}");
+
             var searchfolders = new FindActiveSearchFoldersQuery().Execute(IsolationLevel.ReadUncommitted).GetAll(c => c).ToList();
             Console.WriteLine("Count:" + searchfolders.Count);
+            searchfolders.ForEach(abc);
             if (!searchfolders.Any(c => c.Title == "Film1"))
             {
                 new AddNewSearchfolderCommand(new SearchFolderDto()
@@ -76,27 +100,29 @@ namespace Valhal.MovieCollection.Prototype
             Console.WriteLine("Fetching new list");
             searchfolders = new FindActiveSearchFoldersQuery().Execute(IsolationLevel.ReadCommitted).GetAll(c => c).ToList();
             Console.WriteLine("Count:" + searchfolders.Count);
-            foreach (var sf in searchfolders)
-            {
-                Console.WriteLine($"Title:{sf.Title}\tPath:{sf.Path}");
-            }
+            searchfolders.ForEach(abc);
+
 
         }
 
         private static void SendMessages()
         {
             var bus = container.Resolve<IValhalBus>();
+
             while (true)
             {
+                Console.Write("MapMovieId>");
                 var x = Console.ReadLine();
-                if (x == "ABC")
+                if (x.ToLower() == "exit")
                 {
                     break;
                 }
                 else
                 {
+                    int id;
+                    if(!int.TryParse(x, out id)){ continue; }
                     bus.Publish(new MapMovieFolderMessage() { Path = "", MovieFolderId = Convert.ToInt32(x) });
-                    Console.WriteLine($"SENDING MESSAGE WITH ID:{x}");
+                    Console.WriteLine($"SENDING MapMovieFolderMessage WITH ID:{x}");
                 }
 
             }
@@ -106,6 +132,7 @@ namespace Valhal.MovieCollection.Prototype
 
         private static void SearchFolders()
         {
+            Console.WriteLine("Searching in search folders");
             var x = new FindActiveSearchFoldersQuery();
             var searchFolders = x.Execute(IsolationLevel.ReadUncommitted).GetAll(c => c).ToList();
             foreach (var searchfolder in searchFolders)
