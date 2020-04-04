@@ -1,8 +1,0 @@
-extensions: designer.cs generated.cs
-extensions: .cs .cpp .h
-// Copyright (C) 2014 FoxTales
-// Released under the MIT License
- 
-extensions:  .xml .config .xsd
-<!-- Copyright (C) 2014 FoxTales -->
-<!-- Released under the MIT License -->
