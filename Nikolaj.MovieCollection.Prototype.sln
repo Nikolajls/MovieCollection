@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikolaj.MovieCollection.Prototype", "Nikolaj.MovieCollection.Prototype\Nikolaj.MovieCollection.Prototype.csproj", "{278F778F-CBB9-4F8E-9D2C-2D84E626D375}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikolaj.MovieCollection.Models", "Nikolaj.MovieCollection.Models\Nikolaj.MovieCollection.Models.csproj", "{69EF224B-23F8-4A70-B963-4BF0D857BD26}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Nikolaj.MovieCollection.Database", "Nikolaj.MovieCollection.Database\Nikolaj.MovieCollection.Database.sqlproj", "{DE920E77-878B-4E93-95EA-3AA67174855F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikolaj.MovieCollection.Extensions", "Nikolaj.MovieCollection.Extensions\Nikolaj.MovieCollection.Extensions.csproj", "{62892A46-3974-434A-A29B-859C2AEDFBBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikolaj.MovieCollection.Features", "Nikolaj.MovieCollection.Features\Nikolaj.MovieCollection.Features.csproj", "{F79F498B-3AA7-4612-A75C-F4E463E6A3C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{278F778F-CBB9-4F8E-9D2C-2D84E626D375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{278F778F-CBB9-4F8E-9D2C-2D84E626D375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{278F778F-CBB9-4F8E-9D2C-2D84E626D375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{278F778F-CBB9-4F8E-9D2C-2D84E626D375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69EF224B-23F8-4A70-B963-4BF0D857BD26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69EF224B-23F8-4A70-B963-4BF0D857BD26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69EF224B-23F8-4A70-B963-4BF0D857BD26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69EF224B-23F8-4A70-B963-4BF0D857BD26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE920E77-878B-4E93-95EA-3AA67174855F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE920E77-878B-4E93-95EA-3AA67174855F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE920E77-878B-4E93-95EA-3AA67174855F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DE920E77-878B-4E93-95EA-3AA67174855F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE920E77-878B-4E93-95EA-3AA67174855F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE920E77-878B-4E93-95EA-3AA67174855F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{62892A46-3974-434A-A29B-859C2AEDFBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62892A46-3974-434A-A29B-859C2AEDFBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62892A46-3974-434A-A29B-859C2AEDFBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62892A46-3974-434A-A29B-859C2AEDFBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F79F498B-3AA7-4612-A75C-F4E463E6A3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F79F498B-3AA7-4612-A75C-F4E463E6A3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F79F498B-3AA7-4612-A75C-F4E463E6A3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F79F498B-3AA7-4612-A75C-F4E463E6A3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C627C770-C252-40BE-A587-69551B15E3C5}
+	EndGlobalSection
+EndGlobal
