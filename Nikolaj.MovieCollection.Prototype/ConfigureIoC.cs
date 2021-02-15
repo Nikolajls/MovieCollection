@@ -16,14 +16,15 @@ namespace Nikolaj.MovieCollection.Prototype
 			Log.Logger = new LoggerConfiguration()
 				.MinimumLevel.Information()
 				.WriteTo.Console()
-				.WriteTo.Seq("http://localhost:5341")
+				.WriteTo.Seq("http://192.168.0.151:5341")
 				.CreateLogger();
 
 			Log.Information("Hello, Serilog!");
 			var services = new ServiceCollection();
 			services.AddMediatR(typeof(AssemblyAnchor));
 			services.AddTransient<TestAddHandler>();
-			services.AddTransient<IDbConnection>(provider => new SqlConnection("Server=.;Database=MovieCollection;Integrated Security=true;MultipleActiveResultSets=true;"));
+			services.AddTransient<IDbConnection>(provider => new SqlConnection("Server=192.168.0.151;Database=MovieCollection;User Id=BWS;Password=BWS;MultipleActiveResultSets=true;"));
+		//	services.AddTransient<IDbConnection>(provider => new SqlConnection("Server=.;Database=MovieCollection;Integrated Security=true;MultipleActiveResultSets=true;"));
 			services.AddSingleton<ILogger>(c => Log.Logger);
 
 			return services.BuildServiceProvider();
