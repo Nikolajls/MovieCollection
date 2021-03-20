@@ -16,6 +16,8 @@ namespace Nikolaj.MovieCollection.Prototype
 			var testClass = (TestAddHandler)_container.GetService(typeof(TestAddHandler));
 			await testClass.GetFilesources();
 			Console.WriteLine("Prototype idling.");
+
+		
 			Log.CloseAndFlush();
 		}
 

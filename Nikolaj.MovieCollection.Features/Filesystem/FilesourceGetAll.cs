@@ -13,14 +13,10 @@ using Serilog;
 
 namespace Nikolaj.MovieCollection.Features.Filesystem
 {
-
-
-	public class FilesourceOverview
+	public class FilesourceGetAll
 	{
-	
 		public class Query : RequestBase<List<Result>>
 		{
-
 		}
 
 
@@ -37,14 +33,13 @@ namespace Nikolaj.MovieCollection.Features.Filesystem
 		public class QueryHandler : IRequestHandler<Query, List<Result>>
 		{
 			private readonly ILogger _logger;
-			private readonly IMediator _mediatr;
 			private readonly IDbConnection _connection;
 
-			public QueryHandler(IMediator mediatr, IDbConnection connection, ILogger logger)
+			public QueryHandler(IDbConnection connection, ILogger logger)
 			{
-				_mediatr = mediatr;
 				_connection = connection;
 				_logger = logger;
+			
 			}
 
 			public async Task<List<Result>> Handle(Query request, CancellationToken cancellationToken)
@@ -61,7 +56,6 @@ namespace Nikolaj.MovieCollection.Features.Filesystem
 
 				var result = data.ToList();
 				_logger.ForContext("FileSources", JsonConvert.SerializeObject(result)).Information("Found {Count} file sources", result.Count());
-				await _mediatr.Send(new FilesourceGetAll.Query());
 				return result;
 			}
 		}

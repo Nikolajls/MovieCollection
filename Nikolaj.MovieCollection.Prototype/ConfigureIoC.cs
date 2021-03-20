@@ -23,8 +23,7 @@ namespace Nikolaj.MovieCollection.Prototype
 			var services = new ServiceCollection();
 			services.AddMediatR(typeof(AssemblyAnchor));
 			services.AddTransient<TestAddHandler>();
-			services.AddTransient<IDbConnection>(provider => new SqlConnection("Server=192.168.0.151;Database=MovieCollection;User Id=BWS;Password=BWS;MultipleActiveResultSets=true;"));
-		//	services.AddTransient<IDbConnection>(provider => new SqlConnection("Server=.;Database=MovieCollection;Integrated Security=true;MultipleActiveResultSets=true;"));
+			services.AddTransient<IDbConnection>(provider => new SqlConnection("Server=192.168.0.151;Database=MovieCollection;User Id=test;Password=test;MultipleActiveResultSets=true;"));
 			services.AddSingleton<ILogger>(c => Log.Logger);
 
 			return services.BuildServiceProvider();
